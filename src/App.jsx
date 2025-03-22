@@ -34,8 +34,8 @@ function App() {
           <div className="code-matrix"></div>
         </div>
 
-        {/* Terminal frame */}
-        <div className="container mx-auto px-6 z-10 max-w-5xl">
+        {/* Terminal frame - pushed down with margin-top */}
+        <div className="container mx-auto px-6 z-10 max-w-5xl mb-12 mt-8">
           <div className="bg-gray-900/80 backdrop-blur-sm border border-emerald-500/30 rounded-md overflow-hidden shadow-glow terminal-window">
             {/* Terminal header */}
             <div className="bg-gray-800 px-4 py-2 flex items-center border-b border-gray-700">
@@ -85,45 +85,41 @@ function App() {
                   <span className="absolute inset-0 bg-emerald-600/0 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
                 </button>
               </div>
+
+              {/* Moved stats cards inside the terminal window */}
+              <div className={`grid grid-cols-4 gap-1 mt-8 transition-all duration-1000 delay-900 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
+                <div className="bg-gray-900/90 border-t border-emerald-500/30 p-4 first:rounded-l-md last:rounded-r-md">
+                  <div className="flex items-center">
+                    <span className="text-emerald-400 font-mono font-bold text-2xl">33</span>
+                    <span className="text-xs uppercase ml-2 text-gray-400 font-mono">Weeks</span>
+                  </div>
+                </div>
+                <div className="bg-gray-900/90 border-t border-cyan-500/30 p-4">
+                  <div className="flex items-center">
+                    <span className="text-cyan-400 font-mono font-bold text-2xl">2</span>
+                    <span className="text-xs uppercase ml-2 text-gray-400 font-mono">Phases</span>
+                  </div>
+                </div>
+                <div className="bg-gray-900/90 border-t border-teal-500/30 p-4">
+                  <div className="flex items-center">
+                    <span className="text-teal-400 font-mono font-bold text-2xl">200+</span>
+                    <span className="text-xs uppercase ml-2 text-gray-400 font-mono">Participants</span>
+                  </div>
+                </div>
+                <div className="bg-gray-900/90 border-t border-blue-500/30 p-4">
+                  <div className="flex items-center">
+                    <span className="text-blue-400 font-mono font-bold text-2xl">∞</span>
+                    <span className="text-xs uppercase ml-2 text-gray-400 font-mono">Possibilities</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Animated stats cards */}
-        <div className="absolute bottom-10 left-0 right-0 z-10">
-          <div className="container mx-auto px-6 max-w-5xl">
-            <div className={`grid grid-cols-4 gap-1 transition-all duration-1000 delay-900 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-              <div className="bg-gray-900/90 border-t border-emerald-500/30 p-4 first:rounded-l-md last:rounded-r-md">
-                <div className="flex items-center">
-                  <span className="text-emerald-400 font-mono font-bold text-2xl">33</span>
-                  <span className="text-xs uppercase ml-2 text-gray-400 font-mono">Weeks</span>
-                </div>
-              </div>
-              <div className="bg-gray-900/90 border-t border-cyan-500/30 p-4">
-                <div className="flex items-center">
-                  <span className="text-cyan-400 font-mono font-bold text-2xl">2</span>
-                  <span className="text-xs uppercase ml-2 text-gray-400 font-mono">Phases</span>
-                </div>
-              </div>
-              <div className="bg-gray-900/90 border-t border-teal-500/30 p-4">
-                <div className="flex items-center">
-                  <span className="text-teal-400 font-mono font-bold text-2xl">200+</span>
-                  <span className="text-xs uppercase ml-2 text-gray-400 font-mono">Participants</span>
-                </div>
-              </div>
-              <div className="bg-gray-900/90 border-t border-blue-500/30 p-4">
-                <div className="flex items-center">
-                  <span className="text-blue-400 font-mono font-bold text-2xl">∞</span>
-                  <span className="text-xs uppercase ml-2 text-gray-400 font-mono">Possibilities</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Animated scroll indicator */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <svg className="h-8 w-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        {/* Animated scroll indicator - positioned better */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+          <svg className="h-8 w-8 text-emerald-400 filter drop-shadow-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>

@@ -1,0 +1,274 @@
+`Data Hackathons Series Proposal
+
+Table of Contents
+
+
+Introduction
+Objectives
+Why hackathons?
+Related Works
+Feasibility
+Rules of Engagement
+Structure & Timeline of the Hackathon Series
+Phase I
+Phase II
+Impact & Outcomes
+Call to Action
+
+
+
+Introduction
+
+
+We propose a year-long* series of hackathons designed to guide participants through the complete data science workflow, supplemented with additional steps to reinforce learning. This initiative aligns with cognitive science research encapsulated in a book titled Make It Stick: The Science of Successful Learning, ensuring that participants gain deep, lasting expertise in application of fundamental data science principles.
+
+Here are the general principles from Make It Stick, that would be implemented in practice with the deployment of a mini-hackathon series :
+Retrieval Practice: The hackathon series will engage students in such a way that they will be forced to revisit concepts from the coursework as they do their projects.
+Spaced Repetition: Since the students will be participating in the many mini-hackathon stages, key concepts will be revisited at various stages, ensuring that foundational knowledge is reinforced over time.
+Interleaving: Challenges will cover different domains (e.g., healthcare, finance, sustainability), as well as concepts from the coursework (e.g., data acquisition, data cleaning, EDA, collaboration), encouraging participants to develop adaptable problem-solving skills. The back and forth struggle of students trying to discern what concept they need to implement to solve a particular problem in whatever phase of the project they are in, is precisely what will help them be adept at knowing which tool they need to use and when.
+Elaboration: Participants will present their methodologies, fostering deeper understanding through explanation.
+Generation Effect: Teams will be encouraged to hypothesize solutions before receiving guidance*, promoting active engagement and problem-solving.
+Desirable Difficulties: Each phase of the hackathon will progressively introduce complexity, ensuring that learning is both challenging and rewarding.- (WE CAN HAVE 1 OR 2 BEST PROJECTS THAT LEARNERS WORK ON- FROM YOUTUBE)
+Objectives
+Develop participants' data science skills through hands-on challenges.
+Enhance long-term retention and mastery by integrating evidence-based learning techniques.
+Foster collaboration, innovation, and real-world problem-solving.
+Provide a structured yet engaging experience with measurable outcomes.
+
+
+Why Hackathons?
+
+
+
+Deliberate practice: Depending entirely on the coursework is insufficient as students do not have an avenue to really put their knowledge-base and skills to the test. But the course work has integrated projects? Yes, it does but they are guided projects where someone tells you what to do and what to expect which is hardly a similar experience at work.
+
+Non-Dipstick Evaluation: Traditional hackathons often focus on short-term problem-solving without reinforcing long-term skill development. Our approach ensures participants not only build functional projects but also retain and apply their knowledge effectively in real-world settings.
+
+Gamification: The hackathon series will gamify learning by integrating point-based challenges and leaderboards to incentivize engagement and skill mastery. Participants will earn points for completing various tasks, such as data preprocessing, model optimization, and effective collaboration, fostering a competitive yet supportive learning environment. Milestone achievements will be recognized across the community reinforcement motivation and a sense of accomplishment. Team-based challenges will encourage peer learning, while surprise bonus challenges will introduce an element of excitement and adaptability. Additionally, interactive workshops and real-time feedback loops will ensure continuous learning, making the experience both fun and educational.
+
+As we experiment with the idea of hackathons, we are mainly focused on one fundamental objective:
+
+Community-building initiatives to sustain engagement beyond the event and coursework.
+
+If it moves further, being optimistic and a bit idealistic, The hackathon event could attract third party support in various ways:
+Expert mentorship and workshops.
+Cloud computing resources and data access.
+Prizes,
+scholarships,
+and career development opportunities.
+External Event tickets
+Company tours
+Company benchmarking
+One-on-one
+Leverage speakers- e.g Chris Piech
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Related Works
+
+
+In this section we introduce other players using projects as their sole curriculum structure to motivate students in building meaningful software from scratch, learning core computer science concepts while at it. According to Boot.dev, “Few people fail because coding is too hard, they fail because they lose motivation”. Along with other of their core beliefs, they make a strong argument for putting students in the Zone of Proximal Development (ZoPD), which apparently exists just outside of one’s comfort zone.
+
+CodeCrafters use the same concept of project-based learning but focus on a different student profile: mid-tier to senior developers. Instead of teaching users how to use modern and popular developer tools, they teach them how to clone those developer tools like  git, SQLite, redis and many more.
+
+Feasibility
+
+
+We would like to approach this with utmost realistic expectations as possible. The goal of this is to enforce community engagement of data science students and this is an attempt to do exactly that. This experimental suggestion does not aim to create the next hot-shot silicon savannah startups, although it could get there.
+
+The main goal is to get students thinking, talking and doing things that revolve around data  alongside other students. That being said, to get the most engagement from students, we suggest a metric system that not only rewards students on how impressive their project is but also how far they went into the structure of the hackathon series i.e. rewarding participation as well as ingenuity.
+
+Also taking into account that there are those completely or relatively new in the world of programming, we can have two leagues in the hackathon competitions: Senior League and Junior League. Teams that register in the Senior League will attempt to build real-world level data science projects while those in the Junior League will compete on assignments from Codewars or DataLemur.
+
+
+
+Rules of Engagement
+
+1. Team Formation & Participation
+Each team must consist of 3-5 members*.
+Participants may form their own teams or request assistance in finding teammates.
+Individual participation is allowed for preliminary phases but must transition to a team before project development begins.
+Teams must register within the official registration period.
+Each participant can only be a member of one team.
+
+
+
+2. Code of Conduct
+All participants must adhere to ethical standards and maintain professional conduct throughout the hackathon.
+Harassment, discrimination, or offensive behavior of any kind will not be tolerated.
+Collaboration and knowledge sharing are encouraged, but plagiarism and direct copying of solutions are prohibited.
+Any team found violating the code of conduct may be disqualified from the competition.
+
+
+3. Project Scope & Submission
+All projects must align with the hackathon’s theme and problem statements.
+Teams must document their project workflow, including data sources, methodologies, and key decisions.
+Deadlines for submission must be strictly adhered to; late submissions may not be considered.
+The final submission should include:
+A GitHub repository with properly documented code.
+A project report detailing the data science process.
+A presentation (slides or video) summarizing key insights and results.
+
+
+4. Data Usage & Privacy
+Only publicly available or provided datasets may be used unless otherwise specified.
+Teams must respect data privacy regulations and ethical guidelines.
+Any misuse of sensitive data will result in immediate disqualification.
+
+5. Generative AI Usage
+The use of generative AI tools (such as ChatGPT, GitHub Copilot, or similar) must be explicitly documented in submissions.
+Teams that demonstrate original thinking and rely less on generative AI for coding, analysis, and report writing will be awarded higher scores.
+Over-reliance on AI-generated content without significant human refinement may result in deductions.
+Judges will assess AI usage transparency and the depth of human input in project development.
+
+6. Evaluation Criteria
+Submissions will be judged based on the following:
+Difficulty - The level of difficulty of the project, the amount of cognitive effort required to successfully implement the project to completion.
+Technical Implementation – Quality of code, model performance, and optimization techniques used.
+Data Science Process – Proper data preprocessing, analysis, and problem definition.
+Presentation & Communication – Clarity and effectiveness of report and presentation.
+Proper & reliable documentation - How well the project is documented
+Impact & Feasibility – Real-world applicability and scalability of the solution.
+Learning value - How much participants stand to learn from the project.
+Collaboration - The dynamic nature of each member’s participation in their respective teams in the hackathon.
+
+7. Collaboration & Mentorship*
+Teams will have access to mentors and industry professionals throughout the hackathon*.- ALX
+Regular check-ins will be scheduled to track progress and provide guidance*.
+Teams are encouraged to participate in feedback sessions and engage with the community.
+
+8. Gamification & Incentives*
+Points will be awarded for completing specific milestones and bonus challenges.
+Leaderboards will track team progress, and top-performing teams may receive additional mentorship and resources*. - ALX
+Achievement badges will be granted for key milestones such as best presentation, best data visualization, and most innovative solution*. - ALX
+
+9. Intellectual Property & Ownership
+Teams retain ownership of their projects; however, organizers may feature winning solutions in promotional material.
+If projects are developed in partnership with sponsors, IP rights will be discussed on a case-by-case basis.
+
+10. Final Event & Career Fair
+The final event will feature top teams presenting their projects to judges and industry professionals.* - ALX
+A career fair will be organized to connect participants with potential employers and collaborators.* - ALX
+Winners will be announced, and prizes will be awarded based on final evaluations.* - ALX
+
+11. Disqualification & Appeals
+Any violation of the rules may result in disqualification at the discretion of the organizers.
+Teams have the right to appeal decisions within a given timeframe, with final rulings made by an independent review panel.
+
+By participating in the hackathon, all teams and individuals agree to adhere to these rules to ensure a fair, engaging, and impactful competition.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Structure of the Hackathon Series*
+
+
+This series will consist of multiple interconnected mini-hackathons, each focusing on a distinct phase of the data science workflow, inspired by Misra Turp’s Hands-on Data Science Course on YouTube:
+Phase I
+6 weeks-
+1. Registration opens
+2. Team formations
+3. Setting the stage for getting to know teams and final registration.
+
+
+4 weeks
+Evaluation Criteria: Presentation & Communication, Collaboration.
+Local and Remote environments presentation (GitHub Workflows).
+
+
+8 weeks
+Evaluation Criteria: Data Science Process, Proper & reliable documentation, Presentation & communication, and Collaboration.
+Data collection, visualizations, exploration, cleaning, finding data issues and their potential causes, problem definition, and data preparation.
+
+
+2 weeks
+Phase I score aggregations
+Recess week
+Phase II
+4 weeks
+Evaluation Criteria: Data Science Process, Proper & reliable documentation, Presentation & Communication, Collaboration
+Benchmark model training, evaluations, tuning, and validations.
+
+
+4 weeks
+Evaluation Criteria: Proper & reliable documentation, Presentation & Communication, Collaboration
+Deployment and Final touches
+
+
+3 weeks
+Evaluation Criteria: Difficulty, Technical Implementation, Learning value, Impact & Feasibility
+Phase II score aggregations.
+
+
+2 weeks
+The career fair, participant booths, the final event, and the announcement of winners.
+Impact & Outcomes
+
+
+By the end of the series, participants will have:
+Developed a comprehensive understanding of the data science workflow.
+Created impactful projects addressing real-world challenges.
+Gained valuable networking and career opportunities.
+Cultivated lifelong learning habits that extend beyond the hackathon.
+
+Call To Action
+
+
+As an immediate next step, we will establish the rules for participation, design the hackathon competition calendar, and implement a simple system to keep track of the data and information about the competition, whether by using spreadsheets or a database and a website to display the highlights in the competition.
+
+
+

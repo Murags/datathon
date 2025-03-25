@@ -68,9 +68,9 @@ export default function Timeline() {
       {
         position: 'right',
         number: 4,
-        title: 'Phase I Wrap-up',
+        title: 'Phase I Evaluation',
         duration: '2 Weeks',
-        functionName: 'phaseOneWrapUp',
+        functionName: 'phaseOneEvaluation',
         borderColor: 'cyan',
         content: (
           <>
@@ -132,7 +132,7 @@ export default function Timeline() {
         number: 7,
         title: 'Phase II Evaluation',
         duration: '3 Weeks',
-        functionName: 'evaluatePhaseTwo',
+        functionName: 'phaseTwoEvaluation',
         borderColor: 'emerald',
         content: (
           <>
@@ -150,7 +150,7 @@ export default function Timeline() {
         number: 8,
         title: 'Final Event',
         duration: '2 Weeks',
-        functionName: 'finalEvent',
+        functionName: 'celebrationAndAwards',
         borderColor: 'cyan',
         content: (
           <ul className="text-gray-300 list-none ml-5">

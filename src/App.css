@@ -1,3 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  /* Existing animations */
+  --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  /* New custom animations */
+  --animate-pulse-slow: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float-slow: float 8s ease-in-out infinite;
+  --animate-spin-slow: spin 12s linear infinite;
+  --animate-spin-slow-reverse: spin 12s linear infinite reverse;
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) scale(1) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) scale(1.1) rotate(3deg);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(0.97);
+    }
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
 /* Reset and base styles */
 #root {
   width: 100%;
@@ -225,18 +264,6 @@
   box-shadow: 0 0 15px 1px rgba(20, 184, 166, 0.6);
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-10px) scale(1.05);
-  }
-  100% {
-    transform: translateY(5px) scale(0.95);
-  }
-}
-
 @keyframes sparkle {
   0% {
     opacity: 0.3;
@@ -266,18 +293,6 @@
   50% {
     opacity: 0.85;
     transform: scale(0.98);
-  }
-}
-
-@keyframes gradient-x {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }
 

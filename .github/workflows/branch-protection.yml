@@ -1,0 +1,35 @@
+name: Branch Protection Rules
+
+on:
+  workflow_dispatch:  # Allows manual triggering
+  push:
+    branches:
+      - main  # Run when pushing to main, to ensure rules stay in place
+
+jobs:
+  protection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Protect branches
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.ADMIN_TOKEN }}  # Needs to be a PAT with repo admin rights
+          script: |
+            const branches = ['main', 'dev'];
+
+            for (const branch of branches) {
+              await github.rest.repos.updateBranchProtection({
+                owner: context.repo.owner,
+                repo: context.repo.name,
+                branch: branch,
+                required_status_checks: null,
+                enforce_admins: true,
+                required_pull_request_reviews: {
+                  required_approving_review_count: 1,
+                  dismiss_stale_reviews: true,
+                  require_code_owner_reviews: false
+                },
+                restrictions: null
+              });
+              console.log(`Protected ${branch} branch`);
+            }

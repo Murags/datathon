@@ -15,26 +15,32 @@ jobs:
         with:
           github-token: ${{ secrets.ADMIN_TOKEN }}  # Needs to be a PAT with repo admin rights
           script: |
+            const { owner, repo } = context.repo;
             const branches = ['main', 'dev'];
 
             for (const branch of branches) {
-              await github.rest.repos.updateBranchProtection({
-                owner: context.repo.owner,
-                repo: context.repo.name,
-                branch: branch,
-                required_status_checks: null,
-                enforce_admins: true,
-                required_pull_request_reviews: {
-                  required_approving_review_count: 1,
-                  dismiss_stale_reviews: true,
-                  require_code_owner_reviews: false
-                },
-                restrictions: null,
-                allow_force_pushes: false,
-                allow_deletions: false,
-                block_creations: true,
-                required_linear_history: true,
-                allow_fork_syncing: false
-              });
-              console.log(`Protected ${branch} branch`);
+              try {
+                await github.rest.repos.updateBranchProtection({
+                  owner,
+                  repo,
+                  branch,
+                  required_status_checks: null,
+                  enforce_admins: true,
+                  required_pull_request_reviews: {
+                    required_approving_review_count: 1,
+                    dismiss_stale_reviews: true,
+                    require_code_owner_reviews: false
+                  },
+                  restrictions: null,
+                  allow_force_pushes: false,
+                  allow_deletions: false,
+                  block_creations: true,
+                  required_linear_history: true,
+                  allow_fork_syncing: false
+                });
+                console.log(`Successfully protected ${branch} branch`);
+              } catch (error) {
+                console.error(`Error protecting ${branch} branch:`, error.message);
+                core.setFailed(error.message);
+              }
             }

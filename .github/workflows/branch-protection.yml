@@ -1,10 +1,10 @@
 name: Branch Protection Rules
 
 on:
-  workflow_dispatch:  # Allows manual triggering
+  workflow_dispatch:
   push:
     branches:
-      - main  # Run when pushing to main, to ensure rules stay in place
+      - main
 
 jobs:
   protection:
@@ -13,7 +13,7 @@ jobs:
       - name: Protect branches
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.ADMIN_TOKEN }}  # Needs to be a PAT with repo admin rights
+          github-token: ${{ secrets.ADMIN_TOKEN }}
           script: |
             const { owner, repo } = context.repo;
             const branches = ['main', 'dev'];

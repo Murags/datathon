@@ -1,3 +1,4 @@
+import Footer from '../common/Footer'
 import TimelinePhase from './TimelinePhase'
 
 export default function Timeline() {
@@ -211,6 +212,8 @@ export default function Timeline() {
             <span className="text-gray-500">&gt;</span>
           </h2>
         </div>
+
+        <Footer />
       </div>
     </section>
   )

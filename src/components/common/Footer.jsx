@@ -35,7 +35,8 @@ function Footer() {
             'Facebook': 'https://facebook.com',
             'LinkedIn': 'https://linkedin.com',
             'GitHub': 'https://github.com',
-            'Instagram': 'https://instagram.com'
+            'Instagram': 'https://instagram.com',
+            'Discord': 'https://discord.com'
         },
         'Event_Info': {
             'Phase_I': '',
@@ -156,7 +157,7 @@ function Footer() {
                 {/* LinkedIn */}
 
                 <a
-                    href="https://linkedin.com"
+                    href={footerContent.Social.LinkedIn}
                     target="_blank"
                     rel="noopener noreferrer"
                     className=" text-gray-600 hover:text-[#0077B5] transition-colors duration-200 hover:scale-110 transform"
@@ -167,7 +168,7 @@ function Footer() {
 
                 {/* Discord */}
                 <a
-                    href="https://discord.com"
+                    href={footerContent.Social.Discord}
                     target="_blank"
                     rel="noopener noreferrer"
                     className=" text-gray-600  hover:text-[#5865F2] transition-colors duration-200 hover:scale-110 transform"
@@ -178,7 +179,7 @@ function Footer() {
 
                 {/* GitHub */}
                 <a
-                    href="https://github.com"
+                    href={footerContent.Social.GitHub}
                     target="_blank"
                     rel="noopener noreferrer"
                     className=" text-gray-600  hover:text-[#181717]  dark:hover:text-gray-300 transition-colors duration-200 hover:scale-110 transform"

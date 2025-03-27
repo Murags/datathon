@@ -1,10 +1,11 @@
 import React from 'react'
 import GradientText from './GradientText'
 import { Link } from 'react-router'
+import { Link as ScrollLink } from 'react-scroll'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faLinkedin, faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons';
 
-function Footer() {
+function Footer({phase1_ID, phase2_ID, finalEventID }) {
     const footerContent = {
         'Discover': {
             'About': '',
@@ -39,9 +40,9 @@ function Footer() {
             'Discord': 'https://discord.com'
         },
         'Event_Info': {
-            'Phase_I': '',
-            'Phase_II': '',
-            'Awards': ''
+            'Phase_I': `${phase1_ID}`,
+            'Phase_II': `${phase2_ID}`,
+            'Final_Event': `${finalEventID}`,
         }
     }
 
@@ -54,33 +55,46 @@ function Footer() {
     const currentYear = new Date().getFullYear();
     
   return (
-    <section className="bg-gray-900/80 backdrop-blur-sm border border-emerald-500/30 rounded-md  overflow-hidden shadow-glow terminal-window mt-8 mb-2 p-2"> 
-        <div className='flex flex-col md:flex-row  justify-center items-center md:items-start'>
-            <div className='flex flex-col md:flex-row md:gap-10 justify-center items-start '>
+    <section className="bg-gray-900/80 backdrop-blur-sm border-t border-b border-emerald-500/30 w-screen relative bottom-0 left-0 right-0 shadow-glow mt-8  p-2"> 
+        <div className='flex flex-col md:flex-row  justify-center items-center md:items-start '>
+            <div className='flex flex-col md:flex-row md:gap-20 lg:gap-56 justify-center items-start '>
                     {/* Event Info */}
                     <div className='m-2'>
                         <h5 className={Styles.footerTitlesStyles}>Event Info</h5>
                         <div className={Styles.linkContainerStyles}>
-                            <Link  to={footerContent.Event_Info.Phase_I} className={Styles.linkStyles}>Phase I</Link>
-                            <Link to={footerContent.Event_Info.Phase_II} className={Styles.linkStyles}>Phase II</Link>
-                            <Link to={footerContent.Event_Info.Awards} className={Styles.linkStyles}>Awards</Link>
+                            <ScrollLink 
+                                smooth={true} 
+                                duration={500} 
+                                to={footerContent.Event_Info.Phase_I} 
+                                className={Styles.linkStyles}
+                            >
+                                Phase I
+                            </ScrollLink>
+                            <ScrollLink 
+                                smooth={true} 
+                                duration={500} 
+                                to={footerContent.Event_Info.Phase_II} 
+                                className={Styles.linkStyles}
+                            >
+                                Phase II
+                            </ScrollLink>
+                            <ScrollLink 
+                                smooth={true} 
+                                duration={500} 
+                                to={footerContent.Event_Info.Final_Event} 
+                                className={Styles.linkStyles}
+                            >
+                                Awards and Celebrations
+                            </ScrollLink>
                         </div>
                     </div>
 
                       {/* Discover */}
-                      <div className='m-2'>
+                      <div className='md:mr-8 lg:mr-36 m-2'>
                         <h5 className={Styles.footerTitlesStyles}>Discover</h5>
                         <div className={Styles.linkContainerStyles}>
                             <Link to={footerContent.Discover.Contact} className={Styles.linkStyles}>Contact Us</Link>
                             <Link to={footerContent.Discover.About} className={Styles.linkStyles}>About Us</Link>
-                            <Link to={footerContent.Discover.Careers} className={Styles.linkStyles}>Careers</Link>
-                            <Link to={footerContent.Discover.Leaderboard} className={Styles.linkStyles}>Leaderboard</Link>
-                            <Link to={footerContent.Discover.Submission} className={Styles.linkStyles}>Submission</Link>
-                            <Link to={footerContent.Discover.Testimonials} className={Styles.linkStyles}>Testimonials</Link>
-                            <Link to={footerContent.Discover.Events} className={Styles.linkStyles}>Events</Link>
-                            <Link to={footerContent.Discover.Sponsors_and_Partners} className={Styles.linkStyles}>Sponsors and Partners</Link>
-                            <Link to={footerContent.Discover.FAQs} className={Styles.linkStyles}>FAQs</Link>
-                            <Link to={footerContent.Discover.Blogs} className={Styles.linkStyles}>Blogs</Link>
                         </div>
                     </div>         
                 </div>
@@ -89,25 +103,13 @@ function Footer() {
                       
                        {/* Legal and Compliance */}
 
-                    <div className='m-2'>
+                    <div className='m-2 md:ml-20'>
                         <h5 className={Styles.footerTitlesStyles}>Legal and Compliance</h5>
                         <div className={Styles.linkContainerStyles}>
                             <Link to={footerContent.Legal_and_Compliance.Rules_and_Guidelines} className={Styles.linkStyles}>Rules and Guidelines</Link>
                             <Link to={footerContent.Legal_and_Compliance.Terms} className={Styles.linkStyles}>Terms and Conditions</Link>
                             <Link to={footerContent.Legal_and_Compliance.Privacy} className={Styles.linkStyles}>Privacy Policy</Link>
                             <Link to={footerContent.Legal_and_Compliance.Code_of_Conduct} className={Styles.linkStyles}>Code of Conduct</Link>
-                        </div>
-                    </div>
-
-                        {/* Community */}
-
-                    <div className='m-2'>
-                        <h5 className={Styles.footerTitlesStyles}>Community</h5>
-                        <div className={Styles.linkContainerStyles}>
-                            <Link to={footerContent.Community.Forum} className={Styles.linkStyles}>Forum</Link>
-                            <Link to={footerContent.Community.Blogs} className={Styles.linkStyles}>Blog</Link>
-                            <Link to={footerContent.Community.Events} className={Styles.linkStyles}>Events</Link>
-                            <Link to={footerContent.Community.Partners} className={Styles.linkStyles}>Partners</Link>
                         </div>
                     </div>
                 </div>

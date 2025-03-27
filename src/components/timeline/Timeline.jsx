@@ -5,6 +5,7 @@ export default function Timeline() {
   const phases = {
     phaseI: [
       {
+        id: 'phaseI',
         position: 'left',
         number: 1,
         title: 'Registration & Team Formation',
@@ -87,6 +88,7 @@ export default function Timeline() {
     ],
     phaseII: [
       {
+        id: 'phaseII',
         position: 'left',
         number: 5,
         title: 'Model Training & Evaluation',
@@ -147,6 +149,7 @@ export default function Timeline() {
         )
       },
       {
+        id: 'finalEvent',
         position: 'right',
         number: 8,
         title: 'Final Event',
@@ -165,7 +168,7 @@ export default function Timeline() {
   }
 
   return (
-    <section className="py-20 bg-gray-950 relative">
+    <section className=" bg-gray-950 relative">
       {/* Background decoration */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-gray-950 to-transparent"></div>
@@ -175,7 +178,7 @@ export default function Timeline() {
 
       <div className="container mx-auto px-6 relative z-10 max-w-5xl">
         {/* Opening tag */}
-        <div className="animate-on-scroll">
+        <div className="animate-on-scroll pt-20">
           <h2 className="text-4xl font-bold text-center text-white mb-4 font-mono">
             <span className="text-gray-500">&lt;</span>
             <span className="text-emerald-400">hackathon</span>
@@ -192,6 +195,7 @@ export default function Timeline() {
 
         {/* Phase I */}
         <TimelinePhase
+          id={phases.phaseI[0].id}
           title="PhaseI"
           items={phases.phaseI}
           borderColor="emerald"
@@ -199,6 +203,8 @@ export default function Timeline() {
 
         {/* Phase II */}
         <TimelinePhase
+          id={phases.phaseII[0].id}
+          finalEventID={phases.phaseII[3].id}
           title="PhaseII"
           items={phases.phaseII}
           borderColor="cyan"
@@ -213,8 +219,9 @@ export default function Timeline() {
           </h2>
         </div>
 
-        <Footer />
       </div>
+
+      <Footer phase1_ID={phases.phaseI[0].id} phase2_ID={phases.phaseII[0].id} finalEventID={phases.phaseII[3].id} />
     </section>
   )
 }

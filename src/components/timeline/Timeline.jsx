@@ -170,6 +170,7 @@ export default function Timeline() {
   return (
     <section className=" bg-gray-950 relative">
       {/* Background decoration */}
+
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-gray-950 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-950 to-transparent"></div>
@@ -193,7 +194,6 @@ export default function Timeline() {
           </p>
         </div>
 
-        {/* Phase I */}
         <TimelinePhase
           id={phases.phaseI[0].id}
           title="PhaseI"
@@ -201,7 +201,6 @@ export default function Timeline() {
           borderColor="emerald"
         />
 
-        {/* Phase II */}
         <TimelinePhase
           id={phases.phaseII[0].id}
           finalEventID={phases.phaseII[3].id}
@@ -210,7 +209,6 @@ export default function Timeline() {
           borderColor="cyan"
         />
 
-        {/* Closing tag */}
         <div className="text-center animate-on-scroll mt-16">
           <h2 className="text-4xl font-bold text-white mb-4 font-mono">
             <span className="text-gray-500">&lt;/</span>

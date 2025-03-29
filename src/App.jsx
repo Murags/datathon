@@ -3,6 +3,7 @@ import Button from './components/common/Button'
 import Terminal from './components/terminal/Terminal'
 import Timeline from './components/timeline/Timeline'
 import Impact from './components/sections/Impact'
+import Team from './components/sections/Team'
 import './App.css'
 
 function App() {
@@ -48,7 +49,8 @@ function App() {
 
       <Timeline />
       <Impact />
-      </div>
+      <Team />
+    </div>
   )
 }
 

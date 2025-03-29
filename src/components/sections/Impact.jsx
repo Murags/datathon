@@ -53,7 +53,7 @@ export default function Impact() {
         <div className="animate-on-scroll text-center mb-24">
           <div className="inline-block">
             <div className="text-sm text-gray-500 text-left mb-2 font-mono">// The Future of Data Science</div>
-            <div className="text-7xl font-bold relative">
+            <div className="md:text-7xl text-4xl font-bold relative">
               <span className="absolute -left-8 text-emerald-400/20">{`{`}</span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400">
                 Impact.generate()

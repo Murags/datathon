@@ -95,7 +95,7 @@ export default function Team() {
               <span className="text-gray-500">$ </span>
               <span className="typing-effect">initialize --protocol=quantum</span>
             </div>
-            <div className="text-7xl font-bold relative group cyberpunk-title">
+            <div className="md:text-7xl text-4xl font-bold relative group cyberpunk-title">
               <div className="absolute -left-12 text-emerald-400/20 group-hover:text-emerald-400/40 transition-colors">[</div>
               <GradientText className="relative inline-block">
                 TEAM.DEPLOY()

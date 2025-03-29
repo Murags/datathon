@@ -1,13 +1,13 @@
 import TimelineCard from './TimelineCard'
 
-export default function TimelinePhase({ title, items, borderColor }) {
+export default function TimelinePhase({ title, items, borderColor, id }) {
   return (
     <div className="relative">
       {/* Phase Header */}
       <div className="text-center mb-16 animate-on-scroll">
         <div className={`inline-block px-8 py-3 bg-gray-900 border border-${borderColor}-500/50 rounded text-white font-mono text-lg`}>
           <span className="text-emerald-400">class</span>{' '}
-          <span className="text-white">{title}</span>{' '}
+          <span id={id} className="text-white">{title}</span>{' '}
           <span className="text-emerald-400">extends</span>{' '}
           <span className="text-cyan-400">Datathon</span> {"{"}
         </div>

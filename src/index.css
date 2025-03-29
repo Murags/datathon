@@ -49,10 +49,6 @@ body {
   overflow-x: hidden;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer utilities {
   .text-shadow {
     text-shadow: 0 0 10px rgba(20, 184, 166, 0.5);

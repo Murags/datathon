@@ -4,11 +4,19 @@ import Terminal from './components/terminal/Terminal'
 import Timeline from './components/timeline/Timeline'
 import Impact from './components/sections/Impact'
 import Team from './components/sections/Team'
+import Footer from './components/common/Footer'
 import './App.css'
 
 function App() {
   const [isVisible, setIsVisible] = useState(false)
   const currentYear = new Date().getFullYear()
+
+  // Section IDs for navigation
+  const sectionIds = {
+    phaseI: 'phaseI',
+    phaseII: 'phaseII',
+    finalEvent: 'finalEvent'
+  }
 
   useEffect(() => {
     setIsVisible(true)
@@ -50,6 +58,11 @@ function App() {
       <Timeline />
       <Impact />
       <Team />
+      <Footer
+        phase1ID={sectionIds.phaseI}
+        phase2ID={sectionIds.phaseII}
+        finalEventID={sectionIds.finalEvent}
+      />
     </div>
   )
 }

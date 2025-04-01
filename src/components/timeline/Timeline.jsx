@@ -178,7 +178,6 @@ export default function Timeline() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-5xl">
-        {/* Opening tag */}
         <div className="animate-on-scroll pt-20">
           <h2 className="text-4xl font-bold text-center text-white mb-4 font-mono">
             <span className="text-gray-500">&lt;</span>
@@ -194,20 +193,26 @@ export default function Timeline() {
           </p>
         </div>
 
-        <TimelinePhase
-          id={phases.phaseI[0].id}
-          title="PhaseI"
-          items={phases.phaseI}
-          borderColor="emerald"
-        />
+        <div id="phaseI" className="scroll-mt-24">
+          <TimelinePhase
+            id={phases.phaseI[0].id}
+            title="PhaseI"
+            items={phases.phaseI}
+            borderColor="emerald"
+          />
+        </div>
 
-        <TimelinePhase
-          id={phases.phaseII[0].id}
-          finalEventID={phases.phaseII[3].id}
-          title="PhaseII"
-          items={phases.phaseII}
-          borderColor="cyan"
-        />
+        <div id="phaseII" className="scroll-mt-24">
+          <TimelinePhase
+            id={phases.phaseII[0].id}
+            title="PhaseII"
+            items={phases.phaseII}
+            borderColor="cyan"
+          />
+        </div>
+
+        <div id="finalEvent" className="scroll-mt-24">
+        </div>
 
         <div className="text-center animate-on-scroll mt-16">
           <h2 className="text-4xl font-bold text-white mb-4 font-mono">
@@ -218,8 +223,6 @@ export default function Timeline() {
         </div>
 
       </div>
-
-      <Footer phase1_ID={phases.phaseI[0].id} phase2_ID={phases.phaseII[0].id} finalEventID={phases.phaseII[3].id} />
     </section>
   )
 }

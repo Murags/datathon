@@ -3,8 +3,9 @@ import TerminalCommand from './TerminalCommand'
 import TerminalStats from './TerminalStats'
 import Button from '../common/Button'
 import GradientText from '../common/GradientText'
-
+import { useNavigate } from 'react-router-dom';
 export default function Terminal({ isVisible, currentYear }) {
+  const navigate = useNavigate();
   return (
     <div className="bg-gray-900/80 backdrop-blur-sm border border-emerald-500/30 rounded-md overflow-hidden shadow-glow terminal-window">
       <TerminalHeader />
@@ -34,7 +35,7 @@ export default function Terminal({ isVisible, currentYear }) {
         </div>
 
         <div className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-          <Button variant="primary">
+          <Button variant="primary" className="cursor-pointer" onClick={() => navigate('/signup')}>
             &gt; Register_Now()
           </Button>
           <Button variant="secondary">

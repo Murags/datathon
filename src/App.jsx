@@ -1,14 +1,22 @@
 import { useState, useEffect } from 'react'
-import Button from './components/common/Button'
+import { Link } from 'react-router-dom'
 import Terminal from './components/terminal/Terminal'
 import Timeline from './components/timeline/Timeline'
 import Impact from './components/sections/Impact'
 import Team from './components/sections/Team'
+import Footer from './components/common/Footer'
 import './App.css'
 
 function App() {
   const [isVisible, setIsVisible] = useState(false)
   const currentYear = new Date().getFullYear()
+
+  // Section IDs for navigation
+  const sectionIds = {
+    phaseI: 'phaseI',
+    phaseII: 'phaseII',
+    finalEvent: 'finalEvent'
+  }
 
   useEffect(() => {
     setIsVisible(true)
@@ -30,13 +38,22 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white overflow-hidden font-mono">
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
+        <div className="absolute top-5 right-5 z-20 flex space-x-4">
+          <Link to="/login" className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-md shadow-md transition-colors duration-200">
+            Login
+          </Link>
+          <Link to="/signup" className="px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold rounded-md shadow-md transition-colors duration-200">
+            Signup
+          </Link>
+        </div>
+
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 opacity-90"></div>
           <div className="code-matrix"></div>
         </div>
 
-        <div className="container mx-auto px-6 z-10 max-w-5xl mb-12 mt-8">
+        <div className="container mx-auto px-6 z-10 max-w-5xl text-center">
           <Terminal isVisible={isVisible} currentYear={currentYear} />
         </div>
 
@@ -50,6 +67,11 @@ function App() {
       <Timeline />
       <Impact />
       <Team />
+      <Footer
+        phase1ID={sectionIds.phaseI}
+        phase2ID={sectionIds.phaseII}
+        finalEventID={sectionIds.finalEvent}
+      />
     </div>
   )
 }

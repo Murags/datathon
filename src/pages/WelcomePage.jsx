@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router';
 import toast from 'react-hot-toast';
 
 const StatCard = ({ title, value, icon, trend }) => (
@@ -57,7 +57,7 @@ const WelcomePage = () => {
       </header>
 
       <main className="flex-grow container mx-auto px-6 py-8 max-w-7xl">
-        <h1 className="text-4xl font-bold text-emerald-400 mb-8">
+        <h1 className=" text-2xl md:text-4xl font-bold text-emerald-400 mb-8">
           // Dashboard_Overview
         </h1>
 

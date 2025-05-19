@@ -1,3 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float-slow: float 6s ease-in-out infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-spin-slow-reverse: spin-reverse 25s linear infinite;
+
+  --animate-caret-blink: caret-blink 1s step-end infinite;
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) scale(1) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) scale(1.1) rotate(3deg);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(0.97);
+    }
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin-reverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+  }
+}
+
 /* Reset and base styles */
 #root {
   width: 100%;
@@ -137,7 +181,7 @@
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .animate-in {
@@ -225,18 +269,6 @@
   box-shadow: 0 0 15px 1px rgba(20, 184, 166, 0.6);
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-10px) scale(1.05);
-  }
-  100% {
-    transform: translateY(5px) scale(0.95);
-  }
-}
-
 @keyframes sparkle {
   0% {
     opacity: 0.3;
@@ -269,18 +301,6 @@
   }
 }
 
-@keyframes gradient-x {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .animate-pulse-slow {
   animation: pulse-subtle 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
@@ -304,7 +324,6 @@
   animation: gradient-x 5s ease infinite;
 }
 
-/* We'll keep animations if we need them later */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -339,4 +358,433 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.grid-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image:
+    linear-gradient(to right, rgba(16, 185, 129, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+  animation: grid-movement 20s linear infinite;
+}
+
+.matrix-rain {
+  background: linear-gradient(180deg,
+    transparent,
+    rgba(16, 185, 129, 0.05)
+  );
+  background-size: 100% 100%;
+  animation: matrix-rain 20s linear infinite;
+}
+
+@keyframes matrix-rain {
+  0% { background-position: 50% -100%; }
+  100% { background-position: 50% 200%; }
+}
+
+.glitch-text {
+  position: relative;
+  text-shadow: 0 0 10px currentColor;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip: rect(0, 0, 0, 0);
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -1px 0 #2dd4bf;
+  animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -1px 0 #34d399;
+  animation: glitch-anim-2 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip: rect(20px, 9999px, 21px, 0); }
+  100% { clip: rect(25px, 9999px, 26px, 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip: rect(25px, 9999px, 26px, 0); }
+  100% { clip: rect(20px, 9999px, 21px, 0); }
+}
+
+/* Typing effect */
+.typing-effect {
+  overflow: hidden;
+  border-right: 2px solid #34d399;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #34d399 }
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Cyberpunk Grid */
+.cyber-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image:
+    linear-gradient(to right, rgba(16, 185, 129, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+  animation: grid-pulse 4s ease-in-out infinite;
+}
+
+/* Data Streams */
+.data-streams {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(16, 185, 129, 0.2) 1%,
+    transparent 2%
+  );
+  background-size: 200% 100%;
+  animation: data-flow 20s linear infinite;
+}
+
+/* Cyber Card Styling */
+.cyber-card {
+  position: relative;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
+  transition: all 0.3s ease;
+}
+
+.cyber-frame {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.cyber-line-top,
+.cyber-line-right,
+.cyber-line-bottom,
+.cyber-line-left {
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.cyber-line-top {
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.cyber-line-right {
+  top: 20px;
+  right: 0;
+  bottom: 20px;
+  width: 1px;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.cyber-line-bottom {
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.cyber-line-left {
+  top: 20px;
+  left: 0;
+  bottom: 20px;
+  width: 1px;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+
+.cyber-card:hover .cyber-line-top,
+.cyber-card:hover .cyber-line-bottom {
+  transform: scaleX(1);
+}
+
+.cyber-card:hover .cyber-line-right,
+.cyber-card:hover .cyber-line-left {
+  transform: scaleY(1);
+}
+
+/* Cyber Elements */
+.cyber-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: relative;
+  animation: pulse 2s infinite;
+}
+
+.cyber-badge {
+  padding: 4px 12px;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-stat {
+  padding: 8px 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-tag {
+  font-family: monospace;
+  position: relative;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.cyber-separator {
+  height: 1px;
+  margin: 16px 0;
+}
+
+/* Animations */
+@keyframes grid-pulse {
+  0%, 100% {
+    opacity: 0.05;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+
+@keyframes data-flow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+.cyber-text {
+  position: relative;
+  text-shadow: 0 0 10px currentColor;
+}
+
+.cyber-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  animation: cyber-text-shine 3s infinite;
+}
+
+@keyframes cyber-text-shine {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.terminal-line {
+  position: relative;
+  padding-left: 24px;
+}
+
+.terminal-line::before {
+  content: '>';
+  position: absolute;
+  left: 8px;
+  color: #34d399;
+}
+
+.cyberpunk-title {
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Cyber Panel Styling */
+.cyber-panel {
+  background: rgba(17, 25, 40, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cyber-panel:hover {
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.1);
+}
+
+.cyber-panel-header {
+  background: rgba(17, 25, 40, 0.95);
+  padding: 1rem;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cyber-text-block {
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background: rgba(17, 25, 40, 0.5);
+}
+
+.cyber-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cyber-stat-item {
+  padding: 1rem;
+  background: rgba(17, 25, 40, 0.5);
+  border-radius: 4px;
+  border-left: 2px solid rgba(16, 185, 129, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cyber-capability-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.cyber-capability-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: rgba(17, 25, 40, 0.5);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.cyber-capability-icon {
+  padding: 0.5rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animation for capability items */
+.cyber-capability-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-capability-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+}
+
+.cyber-capability-item:hover::after {
+  transform: translateX(100%);
+  transition: transform 0.6s ease;
+}
+
+/* Pulse animation for status indicators */
+@keyframes status-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse {
+  animation: status-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari and Opera */
+}
+
+/* Optional: Add smooth scroll behavior */
+.hide-scrollbar {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Keyframes for new caret blink animation */
+@keyframes caret-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* General body styling (if not already handled by Tailwind defaults) */
+body {
+  @apply bg-gray-950 text-white font-mono;
+  /* Ensure overflow-x-hidden if you have elements that might cause horizontal scroll */
+  overflow-x: hidden;
+}
+
+/* Code Matrix Animation (if you have one, ensure its styles are here or imported) */
+.code-matrix {
+  /* Styles for your code matrix background if applicable */
+}
+
+/* Scrollbar styling (optional, for a more themed look) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: theme('colors.gray.800');
+}
+::-webkit-scrollbar-thumb {
+  background: theme('colors.emerald.600');
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.emerald.500');
 }

@@ -1,6 +1,6 @@
 export default function TerminalStats({ isVisible }) {
   const stats = [
-    { value: '33', label: 'WEEKS', color: 'emerald' },
+    { value: '4', label: 'MILESTONES', color: 'emerald' },
     { value: '2', label: 'PHASES', color: 'cyan' },
     { value: '200+', label: 'PARTICIPANTS', color: 'teal' },
     { value: '∞', label: 'POSSIBILITIES', color: 'blue' }

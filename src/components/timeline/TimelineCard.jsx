@@ -23,7 +23,6 @@ export default function TimelineCard({
                   <span className="text-emerald-400">function</span>{' '}
                   <span className="text-cyan-400">{functionName}</span>
                   <span className="text-white">()</span>
-                  <span className="text-gray-500">// {duration}</span>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2 font-mono">{title}</h3>
                 {children}
@@ -43,7 +42,6 @@ export default function TimelineCard({
                   <span className="text-emerald-400">function</span>{' '}
                   <span className="text-cyan-400">{functionName}</span>
                   <span className="text-white">()</span>
-                  <span className="text-gray-500">// {duration}</span>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2 font-mono">{title}</h3>
                 {children}

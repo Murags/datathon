@@ -165,7 +165,7 @@ const AuthForm = ({ fields, onSubmit, submitButtonText, title, formError, isLoad
         <Link to="/" className="absolute top-4 left-4 text-gray-400 hover:text-emerald-400 transition-colors duration-200 text-sm font-mono">
           &lt; Back to Home
         </Link>
-        <h2 className="text-3xl font-bold text-center text-emerald-400 mb-2 pt-8">
+        <h2 className="md:text-3xl text-2xl font-bold text-center text-emerald-400 mb-2 pt-8">
           <span className="text-gray-500">&lt;</span>
           {title}
           <span className="text-gray-500">&nbsp;/&gt;</span>

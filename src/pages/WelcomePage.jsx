@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, Link } from 'react-router
+import { useNavigate, Link } from 'react-router-dom'
 import toast from 'react-hot-toast';
 
 const StatCard = ({ title, value, icon, trend }) => (
